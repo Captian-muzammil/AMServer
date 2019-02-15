@@ -18,3 +18,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/order', 'OrderController@index');
+Route::get('/total_order', 'OrderController@totalOrder');
