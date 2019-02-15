@@ -1,6 +1,6 @@
-<?php namespace App\Libs\Platform\Storage\Order;
+<?php namespace App\Libs\Platform\Storage\Outlet;
 
-interface OrderRepository {
+interface OutletRepository {
     public function all();	// method to fetch all entries
 
     public function conditions($filters, $query);	//method to create a conditions QueryBuilder
@@ -15,7 +15,7 @@ interface OrderRepository {
 
     public function find($id);	// method to find an entry by id
 
-    public function listing($limit, $active, $fields, $filters, $sort, $with, $page);	// method to fetch entries matching criter
+    public function listing($limit, $active, $fields, $filters, $sort, $with, $page);	// method to fetch entries matching criteria
 
     public function update($id, $data);	// method to update an existing entry
 

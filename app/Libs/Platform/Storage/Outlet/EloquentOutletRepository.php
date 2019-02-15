@@ -1,11 +1,11 @@
-<?php namespace App\Libs\Platform\Storage\Order;
+<?php namespace App\Libs\Platform\Storage\Outlet;
 
-use App\Model\Order;
+use App\Model\Outlet;
 use Exception;
 use Illuminate\Support\Facades\Input;
 use Yajra\Datatables\Datatables;
 
-class EloquentOrderRepository implements OrderRepository {
+class EloquentOutletRepository implements OutletRepository {
     protected $model;
 
     /**
@@ -13,7 +13,7 @@ class EloquentOrderRepository implements OrderRepository {
      *
      * @param Tag $model
      */
-    public function __construct(Order $model) {
+    public function __construct(Outlet $model) {
         $this->model = $model;
     }
 
@@ -77,7 +77,7 @@ class EloquentOrderRepository implements OrderRepository {
      */
     public function datatables() {
         $result = $this->model->select([
-                'id','amount'
+                'id','name'
             ]);
 
 
@@ -209,8 +209,7 @@ class EloquentOrderRepository implements OrderRepository {
         if ($model) {
             $response = [
                 'id' => $model->id,
-                'amount' => $model->amount,
-                'outlet' => !empty($model->outlet) ? $model->outlet->name : 'non'
+                'name' => $model->name
             ];
         }
         return $response;

@@ -27,5 +27,10 @@ class StorageServiceProvider extends ServiceProvider
             'App\Libs\Platform\Storage\Order\OrderRepository',
             'App\Libs\Platform\Storage\Order\EloquentOrderRepository'
         );
+        $this->app->bind( // binding the WebGame model repositories
+            'App\Libs\Platform\Storage\Outlet\OutletRepository',
+            'App\Libs\Platform\Storage\Outlet\EloquentOutletRepository'
+        );
+
     }
 }
