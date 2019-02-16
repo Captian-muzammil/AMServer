@@ -85,6 +85,8 @@ class EloquentOrderRepository implements OrderRepository {
         return Datatables::of($result)->make();
     }
 
+
+
     /**
      * Method to delete an existing entry from the database
      *
